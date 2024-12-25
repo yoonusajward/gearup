@@ -3,7 +3,10 @@ import ProductList from "../components/ProductList";
 
 const Products = () => {
   return (
-    <div>
+    <div style={{ padding: "20px", backgroundColor: "#f5f5f5" }}>
+      <h1 style={{ textAlign: "center", color: "#333", marginBottom: "20px" }}>
+        Our Products
+      </h1>
       <ProductList />
     </div>
   );

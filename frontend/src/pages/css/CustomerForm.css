@@ -1,51 +1,60 @@
-
 .customer-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .customer-form h2 {
-    text-align: center;
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 1.5rem;
-  }
-  
-  .customer-form form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .customer-form input,
-  .customer-form textarea {
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  .customer-form button {
-    padding: 12px 20px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .customer-form button:hover {
-    background-color: #0056b3;
-  }
-  
-  .customer-form textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-  
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.customer-form h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.customer-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.customer-form input,
+.customer-form textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.customer-form button {
+  padding: 12px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.customer-form button:hover {
+  background-color: #0056b3;
+}
+
+.customer-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.success-message {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #28a745;
+  color: white;
+  font-size: 18px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}

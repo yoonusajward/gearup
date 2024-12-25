@@ -1,19 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./css/ProductItem.css";
 
-const ProductItem = ({ product, onAddToCart }) => {
-  const handleAdd = () => {
-    const quantity = prompt("Enter quantity:", 1);
-    if (quantity && !isNaN(quantity)) {
-      onAddToCart(product.product_id, parseInt(quantity, 10));
-    }
-  };
-
+const ProductItem = ({ product }) => {
   return (
-    <div className="product-item">
-      <h3>{product.name}</h3>
-      <p>{product.description}</p>
-      <p>Price: ${product.price}</p>
-      <button onClick={handleAdd}>Add to Cart</button>
+    <div className="product-card">
+      <div className="product-details">
+        <h3 className="product-name">{product.name}</h3>
+        <p className="product-description">{product.description}</p>
+        <p className="product-price">${product.price}</p>
+        <Link to={`/product/${product.product_id}`} className="product-button">
+          View Details
+        </Link>
+      </div>
     </div>
   );
 };

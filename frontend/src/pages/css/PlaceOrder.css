@@ -1,0 +1,81 @@
+.place-order {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.place-order h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.place-order .order-summary {
+  margin-bottom: 20px;
+}
+
+.place-order .order-summary table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.place-order .order-summary th, .place-order .order-summary td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.place-order .order-summary th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.place-order .order-summary td {
+  background-color: #ffffff;
+}
+
+.place-order .total-price {
+  text-align: right;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.place-order form {
+  margin-top: 20px;
+}
+
+.place-order textarea, .place-order input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.place-order textarea {
+  height: 100px;
+}
+
+.place-order input[type="email"] {
+  margin-bottom: 20px;
+}
+
+.place-order button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.place-order button:hover {
+  background-color: #218838;
+}

@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import ProductItem from "./ProductItem";
+import "./css/ProductList.css";
 
-const ProductList = ({ products, onAddToCart }) => {
-  if (!products || products.length === 0) {
-    return (
-      <p className="text-gray-500 text-center mt-4">No products available.</p>
-    );
-  }
+const ProductList = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchAllProducts = async () => {
+      try {
+        const res = await axios.get("http://localhost:8800/products");
+        setProducts(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchAllProducts();
+  }, []);
 
   return (
-    <div className="max-w-4xl mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4 text-center">Products</h2>
-      <div className="mt-6">
-        {products.map((product) => (
-          <ProductItem
-            key={product.product_id}
-            product={product}
-            onAddToCart={onAddToCart}
-          />
-        ))}
+    <div className="product-list-container">
+      <h2 className="product-list-title">Products</h2>
+      <div className="product-list-grid">
+        {products.length > 0 ? (
+          products.map((product) => (
+            <ProductItem key={product.product_id} product={product} />
+          ))
+        ) : (
+          <p className="no-products-message">No products available.</p>
+        )}
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../pages/css/CustomerForm.css";
 
-const CustomerForm = ({ setUserId }) => {
+const CustomerForm = () => {
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
@@ -11,6 +12,7 @@ const CustomerForm = ({ setUserId }) => {
     address: "",
   });
 
+  const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -21,16 +23,39 @@ const CustomerForm = ({ setUserId }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newUserId = Math.floor(Math.random() * 1000);
-    setUserId(newUserId);
-    navigate("/products");
+
+    const userData = {
+      first_name: userDetails.firstName,
+      last_name: userDetails.lastName,
+      email: userDetails.email,
+      phone_number: userDetails.phoneNumber,
+      address: userDetails.address,
+    };
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8800/users",
+        userData
+      );
+
+      if (response.status === 201) {
+        setSuccessMessage("Customer details have been stored successfully.");
+        setTimeout(() => {
+          navigate("/products");
+        }, 2000);
+      }
+    } catch (error) {
+      console.error("Error saving customer details:", error);
+      alert("Failed to save customer details. Please try again.");
+    }
   };
 
   return (
     <div className="customer-form">
       <h2>Customer Details</h2>
+      {successMessage && <p className="success-message">{successMessage}</p>}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
