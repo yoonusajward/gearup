@@ -23,32 +23,56 @@ GearUp is an online tech store application that allows users to browse and purch
 - **MySQL** should be installed and running.
 
 ### 1. Clone the repository
-First, clone the repository to your local machine:
+  First, clone the repository to your local machine:
 
-```bash
-git clone https://github.com/yoonusajward/gearup.git
-cd gearup
+  ```bash
+  git clone https://github.com/yoonusajward/gearup.git
+  cd gearup
+  ```
 
-```
 ### 2. Setup Backend
 
-#### a. Install dependencies
-Navigate to the backend directory and install the necessary dependencies:
+  #### a. Install dependencies
+  Navigate to the backend directory and install the necessary dependencies:
+  
+  ```bash
+  cd backend
+  npm install
+  ```
+  
+  #### b. Set up the .env file
+    Create a .env file in the backend directory and add the following environment variables:
+  
+  ```bash
+  DB_HOST=localhost
+  DB_USER=root
+  DB_PASSWORD=your_mysql_password
+  DB_NAME=gearup
+  PORT=8800
+  ```
+  
+  #### c. Start the Backend Server
+    Start the backend server by running:
+  
+  ```bash
+  npm start
+  ```
+  The backend will be available at http://localhost:8800.
 
-```bash
-cd backend
-npm install
-```
+### 3.  Setup Frontend
 
-### 2.  Setup Frontend
-
-#### a. Install dependencies
-Navigate to the frontend directory and install the necessary dependencies:
-
-```bash
-cd frontend
-npm install
-npm start
-
-```
-The frontend will be available at http://localhost:3000.
+  #### a. Install dependencies
+  Navigate to the frontend directory and install the necessary dependencies:
+  
+  ```bash
+  cd frontend
+  npm install
+  ```
+  
+  #### b. Start the Frontend Server
+  Start the frontend server by running:
+  
+  ```bash
+  npm start
+  ```
+  The frontend will be available at http://localhost:3000.
